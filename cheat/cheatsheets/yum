@@ -4,14 +4,26 @@ yum install <package name>
 # To perform a local install:
 yum localinstall <package name>
 
+# To downgrade a package to an earlier version
+yum downgrade <package name>
+
+# To remove one package and install another
+yum swap <one package name> <another package name>
+
 # To remove a package:
 yum remove <package name>
+
+# To remove a package plus additional unneeded packages:
+yum autoremove <package name>
 
 # To search for a package:
 yum search <package name>
 
 # To find what package installs a program:
 yum whatprovides </path/to/program>
+
+# To find packages that provide the queried file
+yum provides <*/file>
 
 # To find the dependencies of a package:
 yum deplist <package name>
@@ -24,6 +36,9 @@ yum repolist
 
 # List packages containing a certain keyword:
 yum list <package_name_or_word_to_search>
+
+# To download to /var/cache/yum/arch/prod/repo/packages/, but don't install
+yum install --downloadonly <package name>
  
 # To download the source RPM for a package:
 yumdownloader --source <package name>
